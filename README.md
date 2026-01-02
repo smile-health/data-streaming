@@ -78,6 +78,9 @@ To implement the data streaming pipeline for SMILE, follow these steps:
 
 ## Data Pipeline
 
+![Data Pipeline](images/Data-Pipeline.webp)
+
+
 ### Data Source (MySQL)
 
 - **Source Database**  
