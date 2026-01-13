@@ -29,7 +29,7 @@ It is intended to support both **initial setup** and **ongoing maintenance** of 
 
 ## Technology Stack
 
-- **MySQL Database**  
+- **MySQL and MariaDB Database**  
   Acts as the source OLTP database. Must be configured to allow CDC (binary log enabled).
 
 - **Kafka Connect with Debezium**  
@@ -52,7 +52,7 @@ It is intended to support both **initial setup** and **ongoing maintenance** of 
 
 To implement the data streaming pipeline for SMILE, follow these steps:
 
-1. Run **MySQL, ClickHouse, Debezium (Kafka Connect), Kafka, and RisingWave** using Kubernetes operators.  
+1. Run **MySQL, MariaDB, ClickHouse, Debezium (Kafka Connect), Kafka, and RisingWave** using Kubernetes operators.  
    - For Kafka and Kafka Connect, the **Strimzi Operator** is recommended.
 
 2. Create the **Debezium connector configuration** in YAML.  
@@ -81,7 +81,7 @@ To implement the data streaming pipeline for SMILE, follow these steps:
 ![Data Pipeline](images/Data-Pipeline.webp)
 
 
-### Data Source (MySQL)
+### Data Source (MySQL & MariaDB)
 
 - **Source Database**  
   A transactional MySQL database serves as the source system. Tables are monitored using CDC.
@@ -159,7 +159,7 @@ RisingWave performance can be tuned via:
 
 ### Performance Benchmarks
 
-- **Debezium Sink (MySQL → Kafka)**
+- **Debezium Sink (MySQL/MariaDB → Kafka)**
   - Rows per second
   - Bytes per second
 
